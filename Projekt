@@ -1,0 +1,132 @@
+using System;
+using System.IO;
+using System.Data.SqlClient;
+using System.Text;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Data;
+
+namespace Projekt
+{
+    class Program
+    {
+        
+        static void Main(string[] args)
+        {
+
+            DateTime thisDay = DateTime.Today;
+            Console.WriteLine(thisDay.ToString("d"));
+           
+
+            SqlConnection sqlCon = new SqlConnection(@"Data Source=(local)\SQLEXPRESS;Initial Catalog=Praca;Integrated Security=True");
+            SqlDataAdapter sqlada = new SqlDataAdapter("Select * from Glowna", sqlCon);
+            DataTable dtbl = new DataTable();
+            sqlada.Fill(dtbl);
+
+            for (; ; )
+            {
+
+            Console.WriteLine(" _____________________________");
+            Console.WriteLine("|                             |");
+            Console.WriteLine("| 1.Wyswietlanie Koniec_Proby |");
+            Console.WriteLine("| 2.Wyswietlenie KRK          |");
+            Console.WriteLine("| 3.Wyswietlenie Przebieg     |");
+            Console.WriteLine("| 4.Wyswietlenie Info         |");
+            Console.WriteLine("| 5.Wyjscie                   |");
+            Console.WriteLine("|_____________________________|");
+
+                string wybor = Console.ReadLine();
+
+                if (wybor == "1")
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Koniec_Proby");
+
+                    foreach (DataRow row in dtbl.Rows)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine(row["Imie"]);                    
+                        Console.WriteLine(row["Nazwisko"]);               
+                        Console.WriteLine(row["Koniec_Proby"]);
+                        Console.WriteLine();
+                    }
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+                else if (wybor == "2")
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("KRK");
+
+                    foreach (DataRow row in dtbl.Rows)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine(row["Imie"]);
+                        Console.WriteLine(row["Nazwisko"]);
+                        Console.WriteLine(row["KRK"]);
+                        Console.WriteLine();
+                    }
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+                else if (wybor == "3")
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Przebieg");
+
+                    foreach (DataRow row in dtbl.Rows)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine(row["Imie"]);
+                        Console.WriteLine(row["Nazwisko"]);
+                        Console.WriteLine(row["Przebieg"]);
+                        Console.WriteLine();
+                    }
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+                else if (wybor == "4")
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("Info");
+
+                    foreach (DataRow row in dtbl.Rows)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine(row["Imie"]);
+                        Console.WriteLine(row["Nazwisko"]);
+                        Console.WriteLine(row["Info"]);
+                        Console.WriteLine();
+                    }
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+                else if (wybor == "5")
+                {
+                    break;
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Podaj liczbe");
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+
+            }
+
+
+           
+
+        }
+    }
+}
