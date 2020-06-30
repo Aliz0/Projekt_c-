@@ -1,10 +1,5 @@
 using System;
-using System.IO;
 using System.Data.SqlClient;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Data;
 
 namespace Projekt
@@ -27,22 +22,49 @@ namespace Projekt
             for (; ; )
             {
 
-            Console.WriteLine(" _____________________________");
-            Console.WriteLine("|                             |");
-            Console.WriteLine("| 1.Wyswietlanie Koniec_Proby |");
-            Console.WriteLine("| 2.Wyswietlenie KRK          |");
-            Console.WriteLine("| 3.Wyswietlenie Przebieg     |");
-            Console.WriteLine("| 4.Wyswietlenie Info         |");
-            Console.WriteLine("| 5.Wyjscie                   |");
-            Console.WriteLine("|_____________________________|");
+            //Console.WriteLine(" _____________________________");
+            //Console.WriteLine("|                             |");
+            //Console.WriteLine("| 1.Wyswietlanie Koniec_Proby |");
+            //Console.WriteLine("| 2.Wyswietlenie KRK          |");
+            //Console.WriteLine("| 3.Wyswietlenie Przebieg     |");
+            //Console.WriteLine("| 4.Wyswietlenie Info         |");
+            //Console.WriteLine("| 5.Wyjscie                   |");
+            //Console.WriteLine("|_____________________________|");
 
+            string a = "_____________________________";
+            string b = "|                             |";
+            string c = "| 1.Wyswietlanie Koniec_Proby |";
+            string d = "| 2.Wyswietlenie KRK          |";
+            string e = "| 3.Wyswietlenie Przebieg     |";
+            string f = "| 4.Wyswietlenie Info         |";
+            string g = "| 5.Wyjscie                   |";
+            string h = "|_____________________________|";
+
+                Console.SetCursorPosition((Console.WindowWidth - a.Length) / 2, Console.CursorTop);
+                Console.WriteLine(a);
+                Console.SetCursorPosition((Console.WindowWidth - b.Length) / 2, Console.CursorTop);
+                Console.WriteLine(b); 
+                Console.SetCursorPosition((Console.WindowWidth - c.Length) / 2, Console.CursorTop);
+                Console.WriteLine(c); 
+                Console.SetCursorPosition((Console.WindowWidth - d.Length) / 2, Console.CursorTop);
+                Console.WriteLine(d); 
+                Console.SetCursorPosition((Console.WindowWidth - e.Length) / 2, Console.CursorTop);
+                Console.WriteLine(e); 
+                Console.SetCursorPosition((Console.WindowWidth - f.Length) / 2, Console.CursorTop);
+                Console.WriteLine(f); 
+                Console.SetCursorPosition((Console.WindowWidth - g.Length) / 2, Console.CursorTop);
+                Console.WriteLine(g); 
+                Console.SetCursorPosition((Console.WindowWidth - h.Length) / 2, Console.CursorTop);
+                Console.WriteLine(h);
                 string wybor = Console.ReadLine();
 
                 if (wybor == "1")
                 {
                     Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(thisDay.ToString("d"));
                     Console.WriteLine("Koniec_Proby");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    
 
                     foreach (DataRow row in dtbl.Rows)
                     {
@@ -59,8 +81,10 @@ namespace Projekt
                 else if (wybor == "2")
                 {
                     Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine(thisDay.ToString("d"));
                     Console.WriteLine("KRK");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    
 
                     foreach (DataRow row in dtbl.Rows)
                     {
@@ -77,8 +101,10 @@ namespace Projekt
                 else if (wybor == "3")
                 {
                     Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine(thisDay.ToString("d"));
                     Console.WriteLine("Przebieg");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    
 
                     foreach (DataRow row in dtbl.Rows)
                     {
@@ -95,8 +121,10 @@ namespace Projekt
                 else if (wybor == "4")
                 {
                     Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine(thisDay.ToString("d"));
                     Console.WriteLine("Info");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    
 
                     foreach (DataRow row in dtbl.Rows)
                     {
