@@ -22,15 +22,6 @@ namespace Projekt
             for (; ; )
             {
 
-            //Console.WriteLine(" _____________________________");
-            //Console.WriteLine("|                             |");
-            //Console.WriteLine("| 1.Wyswietlanie Koniec_Proby |");
-            //Console.WriteLine("| 2.Wyswietlenie KRK          |");
-            //Console.WriteLine("| 3.Wyswietlenie Przebieg     |");
-            //Console.WriteLine("| 4.Wyswietlenie Info         |");
-            //Console.WriteLine("| 5.Wyjscie                   |");
-            //Console.WriteLine("|_____________________________|");
-
             string a = "_____________________________";
             string b = "|                             |";
             string c = "| 1.Wyswietlanie Koniec_Proby |";
